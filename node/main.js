@@ -19,8 +19,10 @@ async function setNumber() {
     console.log(newDonation);
     //Now pass this number
     //
+    //Break number down
+    console.log(Number(newDonation).toLocaleString());
     child.exec(
-      "../arduino/insert-number.sh " + newDonation,
+      "../arduino/insert-number.sh " + Number(newDonation).toLocaleString(),
       (err, stdout, stderr) => {
         if (err) {
           // node couldn't execute the command
